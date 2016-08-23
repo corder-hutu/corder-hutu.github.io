@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div跟随鼠标移动</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        pre, code ,h1{
+            display: block;
+            background: none repeat scroll 0 0;
+            background-color: #555555;
+            border-radius:4px 4px 4px 4px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 10px inset;
+            clear: both;
+            font-family: 'Consolas', 'Courier', 'Monaco', monospace;
+            color: #fff;
+            /*background-color: #f8f8f8;*/
+            /*margin: 5px 0px;*/
+            overflow: inherit;
+            /*padding: 10px;*/
+            white-space: pre;
+            /*text-indent: 1em;*/
+        }
+        .bg-lft{
+            padding-left:800px;
+        }
+        .bg-lft .aside{
+            float:left;
+            height:1500px;
+            width:800px;
+            border-right:1px solid #00B7FF;
+            position:relative;
+            left:-800px; /* = -parantNode.paddingLeft */
+            _left: 0; /*IE6 hack*/
+        }
+        /*.bg-lft .aside #cssCode,.bg-lft .aside #jsCode{cursor:pointer;}*/
+        /*.bg-lft .aside #cssDiv,.bg-lft .aside #jsDiv{display:none;}*/
+        .bg-lft .main{
+            float:left;
+            width:100%;
+        }
+        .bg-lft .main #box{
+            width:100px;
+            height:100px;
+            background: red;
+            position:absolute;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            //获取div box
+            var box = document.getElementById("box");
+            //红色div跟随鼠标移动
+            //为document绑定跟随鼠标移动事件
+            box.style.left = 800 + "px";
+            box.style.top = 0;
+            document.onmousemove = function(ev){
+                //处理event对象兼容性
+                ev = ev || event;
+
+                //获取鼠标指针的坐标
+                //clientX和clientY获取到的是鼠标相对于当前可视窗口的坐标
+                var x = ev.clientX;
+                var y = ev.clientY;
+
+                //获取滚动条的高度
+                //document.body  只支持chrome浏览器
+                //document.documentElement  支持火狐 ie
+                var st = document.body.scrollTop || document.documentElement.scrollTop;
+                var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+                /**
+                 * pageX和pageY表示鼠标相对于整个页面的坐标
+                 * 但是IE8以下的浏览器，不支持这个属性
+                 */
+                /*var x = ev.pageX;
+                 var y = ev.pageY;*/
+
+                //修改div的top和left
+                box.style.top = y + st + "px";
+                box.style.left = x + sl  + "px";
+
+            }
+        }
+    </script>
+</head>
+<body style="height:1500px;">
+<div class="bg-lft">
+    <div class="aside">
+        <h1 id="cssCode">css代码</h1>
+        <div id="cssDiv">
+<pre>
+    *{margin:0;padding:0;}
+        .bg-lft{
+        padding-left:800px;
+    }
+    .bg-lft .aside{
+        float:left;
+        height:1500px;
+        width:800px;
+        border-right:1px solid #00B7FF;
+        position:relative;
+        left:-800px; /* = -parantNode.paddingLeft */
+        _left: 0; /*IE6 hack*/
+    }
+    .bg-lft .main{
+        position:absolute;
+        float:left;
+        width:100%;
+    }
+    .bg-lft .main #box{
+        width:100px;
+        height:100px;
+        background: red;
+        position:absolute;
+    }
+</pre>
+        </div>
+        <h1 id="jsCode">js代码</h1>
+        <div id="jsDiv">
+<pre>
+    window.onload = function(){
+        //获取div box
+        var box = document.getElementById("box");
+        //红色div跟随鼠标移动
+        //为document绑定跟随鼠标移动事件
+
+        box.style.left = 800 + "px";
+        box.style.top = 0;
+
+        document.onmousemove = function(ev){
+            //处理event对象兼容性
+            ev = ev || event;
+
+            //获取鼠标指针的坐标
+            //clientX和clientY获取到的是鼠标相对于当前可视窗口的坐标
+            var x = ev.clientX;
+            var y = ev.clientY;
+
+            //获取滚动条的高度
+            //document.body  只支持chrome浏览器
+            //document.documentElement  支持火狐 ie
+            var st = document.body.scrollTop || document.documentElement.scrollTop;
+            var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+            /**
+            * pageX和pageY表示鼠标相对于整个页面的坐标
+            * 但是IE8以下的浏览器，不支持这个属性
+            */
+            /*var x = ev.pageX;
+            var y = ev.pageY;*/
+
+            //修改div的top和left
+            box.style.top = y + st + "px";
+            box.style.left = x + sl - 201 + "px";
+        }
+    }
+</pre>
+        </div>
+    </div>
+    <div class="main">
+        <div id="box"></div>
+    </div>
+</div>
+</body>
+</html>
