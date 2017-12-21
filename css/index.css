@@ -4,6 +4,12 @@
 .project-tagline {
     margin: 1rem 0;
 }
+.myNotes {
+	width: 20px;
+	height: 20px;
+	color: #FFF;
+	display: inline-block;
+}
 .main-content {
     max-width: 75rem;
     padding: 2rem 0rem;
