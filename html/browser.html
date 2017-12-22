@@ -2,162 +2,191 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <title>浏览器兼容问题</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../css/common.css">
 </head>
 <body>
-    <pre style="padding-top:10px;">
-        <span class="textColor">1、div的垂直居中问题: vertical-align:middle</span>
-        	将行距增加到和整个div一样高 : line-height:  ;然后插入文字就垂直居中了
-        	缺点是要控制内容不要换行
-        	
+	<div class="col-lg-12 col-xs-12">
+		<span class="textColor">1、div的垂直居中问题: vertical-align:middle</span>
+		<p>将行距增加到和整个div一样高 : line-height:  ;然后插入文字就垂直居中了</p>
+        <p>缺点是要控制内容不要换行</p>	
+	</div>
+    <div class="col-lg-12 col-xs-12">    
         <span class="textColor">2、margin加倍的问题</span>
-        	设置为float的div在IE下设置的margin会加倍,这是IE6存在的bug
-			解决方法:在这个div上加上: display:inline;
-			例如: .div{float:left;margin:5px;/*ie6下会解析为margin:10px;解决办法:*/display:inline;}
-			这里细说一下block与inline两个元素：
-	        block  元素的特点：总是在新行上开始，高度、宽度、行高、边距都可以控制(块元素)；
-	        Inline 元素的特点：和其他元素在同一行上，不可控制(内嵌元素)。
-	        
+		<p>设置为float的div在IE下设置的margin会加倍,这是IE6存在的bug</p>	
+		<p>解决方法:在这个div上加上: display:inline;</p>	
+		<p>例如: .div{float:left;margin:5px;/*ie6下会解析为margin:10px;解决办法:*/display:inline;}</p>	
+		<p>这里细说一下block与inline两个元素：</p>	
+		<p> block  元素的特点：总是在新行上开始，高度、宽度、行高、边距都可以控制(块元素)；</p>	
+		<p>Inline 元素的特点：和其他元素在同一行上，不可控制(内嵌元素)。</p>	
+	</div>
+    <div class="col-lg-12 col-xs-12">        
         <span class="textColor">3、min- 和 ie</span>
-        	min- 最小 它能指定元素最小也不能小于某个宽度或者高度，这样能保证排版
-			但是，ie浏览器不识别它。ie浏览器把width和height当做最小来使用
-			解决方式：
-	        (1)
-		        #box{width:80px;height:35px;}
-		        html>body #box{width:auto;height:auto;min-width:80px;min-height:35px;}
-	        (2)
-		        #box{min-width:80px;width:expression(document.body.clientWidth<80?"80px":"auto";}
-		        expression() // 只有ie认得,这样写导致文档不太规范
-		        
+        	<p>min- 最小 它能指定元素最小也不能小于某个宽度或者高度，这样能保证排版</p>
+			<p>但是，ie浏览器不识别它。ie浏览器把width和height当做最小来使用</p>
+			<p>解决方式：</p>
+	        <p>(1)</p>
+		       <p> #box{width:80px;height:35px;}</p>
+		       <p> html>body #box{width:auto;height:auto;min-width:80px;min-height:35px;}</p>
+	        <p>(2)</p>
+		    <p>
+		       	#box{min-width:80px;width:expression(document.body.clientWidth<80?"/80px"/:"/auto"/;}
+		    </p>
+	        <p> expression() // 只有ie认得,这样写导致文档不太规范</p>
+	</div>
+    <div class="col-lg-12 col-xs-12">	        
         <span class="textColor">4、div浮动，导致ie文本产生3px的bug</span>
-        	左边对象浮动，右边采用外补丁的左边距来定位，右边对象内的文本会离左边有3px的间距
-        	解决问题：.left{margin-right:-3px;}
-        	
+        	<p>左边对象浮动，右边采用外补丁的左边距来定位，右边对象内的文本会离左边有3px的间距</p>
+        	<p>解决问题：.left{margin-right:-3px;}</p>
+    </div>
+    <div class="col-lg-12 col-xs-12">    	
         <span class="textColor">5、ie捉迷藏的问题</span>
-        	使用line-height属性，或者固定宽高
-        	
+        	<p>使用line-height属性，或者固定宽高</p>
+    </div>
+    <div class="col-lg-12 col-xs-12">    	
         <span class="textColor">6、清除浮动</span>
-			(1)clear：both；
-			(2)BFC 块级布局环境
-			每一个元素都有一个隐藏属性BFC 默认是关闭的
-			开启后特性: 垂直外边距不会重叠
-			            不会和浮动元素重叠
-			            可以包含浮动元素
-			开启BFC方式: 设置元素浮动
-			             设置元素绝对定位
-			             设置元素:display:inline-block;块元素宽度不能自适应
-			             设置元素:overflow:非默认值, 通常为overflow: hidden
-			*IE8以前浏览器支持BFC不好
-			IE中有hasLayout 设置 zoom:1  只有ie认识这个属性
-			(3)选中父元素的后边
-			.clerafix:after{content:"";/*向元素后添加一个内容*/
-                display:table;/*修改为块元素*/
-                clear:both;/*清除左右浮动*/
-               }
-               
+			<p>(1)clear：both；</p>
+			<p>(2)BFC 块级布局环境</p>
+			<p>每一个元素都有一个隐藏属性BFC 默认是关闭的</p>
+			<p>开启后特性: 垂直外边距不会重叠</p>
+			           <p> 不会和浮动元素重叠</p>
+			            <p>可以包含浮动元素</p>
+			<p>开启BFC方式: 设置元素浮动</p>
+			             <p>设置元素绝对定位</p>
+			             <p>设置元素:display:inline-block;块元素宽度不能自适应</p>
+			             <p>设置元素:overflow:非默认值, 通常为overflow: hidden</p>
+			<p>*IE8以前浏览器支持BFC不好</p>
+			<p>IE中有hasLayout 设置 zoom:1  只有ie认识这个属性</p>
+			<p>(3)选中父元素的后边</p>
+			<p>.clerafix:after{content:"";/*向元素后添加一个内容*/</p>
+                <p>display:table;/*修改为块元素*/</p>
+                <p>clear:both;/*清除左右浮动*/</p>
+               <p>}</p>
+    </div>
+    <div class="col-lg-12 col-xs-12">           
         <span class="textColor">7、IE6下为什么图片下有空隙产生</span>
-       		设置img 为display:block
-    		或者
-        	设置vertical-align 属性为 vertical-align:top | bottom |middle |text-bottom 都可以解决。
-        	
+       		<p>设置img 为display:block</p>
+    		<p>或者</p>
+        	<p>设置vertical-align 属性为 vertical-align:top | bottom |middle |text-bottom 都可以解决。</p>
+    </div>
+    <div class="col-lg-12 col-xs-12">    	
         <span class="textColor">8、li中内容超过长度后以省略号显示的方法 （此方法适用与IE与OP浏览器）</span>
-         	li {   width:200px; white-space:nowrap;
-                text-overflow:ellipsis;
-                -o-text-overflow:ellipsis;
-                overflow: hidden; }
-
+         	<p>li {   width:200px; white-space:nowrap;</p>
+                <p>text-overflow:ellipsis;</p>
+                <p>-o-text-overflow:ellipsis;</p>
+                <p>overflow: hidden; }</p>
+	</div>
+    <div class="col-lg-12 col-xs-12">
         <span class="textColor">9、为什么无法定义1px左右高度的容器</span>
-        	IE6下这个问题是因为默认的行高造成的。
-       		 解决的方法也有很多，例如:overflow:hidden | zoom:0.08 | line-height:1px 。
-       		 
+        	<p>IE6下这个问题是因为默认的行高造成的。</p>
+       		<p>解决的方法也有很多，例如:overflow:hidden | zoom:0.08 | line-height:1px 。</p>
+    </div>
+    <div class="col-lg-12 col-xs-12">   		 
         <span class="textColor">10、怎样使一个层垂直居中于浏览器中</span>
-        	这里我们使用百分比绝对定位，与外补丁负值的方法，负值的大小为其自身宽度高度除以二 。
-        	div {   position:absolute;
-                top:50%;
-                left:50%;
-                margin:-100px 0 0 -100px;//宽高的一半
-                width:200px;
-                height:200px;
-                border:1px solid red; }
-                <xmp>
-                <div class="wrapper">
-                    <div class="div1"></div>
-                    <div class="content"></div>
-                </div>
-                </xmp>
-				/* 第一种方法
-				 * 优点：适用于所有浏览器不需要嵌套标签
-				 * 缺点：没有足够空间时，content 会消失(类似div 在 body 内，当用户缩小浏览器窗口，滚动条不出现的情况)
-				.wrapper{
-					width:100px;
-					height:100px;
-					background-color: yellow;
-					position:relative;
-				}
-				.content{
-					width:20px;
-					height:20px;
-					background-color: red;
-					position:absolute;//父元素需要相对定位
-					left: 50%;
-					top:50%;
-					margin:-10px 0 0 -10px;//二分之一的宽和高
-				}*/
-				/*第二种方式
-				 * 优点：content 可以动态改变高度(不需在 CSS 中定义)。当 wrapper 里没有足够空间时， content 不会被截断
-				 * 缺点：Internet Explorer(甚至 IE8 beta)中无效，许多嵌套标签(其实没那么糟糕，另一个专题)
-				 .wrapper{
-					width:100px;
-					height:100px;
-					background-color: yellow;
-					vertical-align: middle;
-					display: table-cell;
-				}
-				.content{
-					width:20px;
-					height:20px;
-					background-color: red;
-					margin:0 auto;
-				}*/
-				/*第三种方法
-				 * 优点：简单
-				 * 缺点：IE(IE8 beta)中无效,无足够空间时，content 被截断，但是不会有滚动条出现
-				.wrapper{
-					width:100px;
-					height:100px;
-					background-color: yellow;
-					position:relative;
-				}
-				.content{
-					width:20px;
-					height:20px;
-					background-color: red;
-					margin: auto;
-					position: absolute;
-					top: 0; left: 0; bottom: 0; right: 0;
-				}*/
-				/*第四种方法
-				 * 优点：适用于所有浏览器,没有足够空间时(例如：窗口缩小) content 不会被截断，滚动条出现
-				 * 缺点：需要额外的空元素*/
-				.wrapper{
-					width:100px;
-					height:100px;
-					background-color: yellow;
-					position:relative;
-				}
-				.div1{
-					height:50%;
-					margin-bottom:-10px;
-				}
-				.content{
-					width:20px;
-					height:20px;
-					background-color: red;
-					margin: auto;
-					position: relative;
-				}
-
+        	<p>这里我们使用百分比绝对定位，与外补丁负值的方法，负值的大小为其自身宽度高度除以二 。</p>
+        	<p>div {   position:absolute;</p>
+                <p>top:50%;</p>
+                <p>left:50%;</p>
+                <p>margin:-100px 0 0 -100px;//宽高的一半</p>
+                <p>width:200px;</p>
+                <p>height:200px;</p>
+                <p>border:1px solid red; }</p>
+                
+                <p>div class="wrapper"</p>
+                    <p>div class="div1"/div</p>
+                    <p>div class="content">/div</p>
+                <p>div</p>
+<pre>
+/* 第一种方法
+ * 优点：适用于所有浏览器不需要嵌套标签
+ * 缺点：没有足够空间时，content 会消失
+ * (类似div 在 body 内，当用户缩小浏览
+ * 器窗口，滚动条不出现的情况)
+ */
+.wrapper{
+	width:100px;
+	height:100px;
+	background-color: yellow;
+	position:relative;
+}
+.content{
+	width:20px;
+	height:20px;
+	background-color: red;
+	position:absolute;//父元素需要相对定位
+	left: 50%;
+	top:50%;
+	margin:-10px 0 0 -10px;//二分之一的宽和高
+}
 </pre>
+<pre>
+/* 第二种方式
+ * 优点：content 可以动态改变高度(不需在 CSS 中定义)。
+ * 当 wrapper 里没有足够空间时， content 不会被截断
+ * 缺点：Internet Explorer(甚至 IE8 beta)中无效，
+ * 许多嵌套标签(其实没那么糟糕，另一个专题)
+ */
+.wrapper{
+	width:100px;
+	height:100px;
+	background-color: yellow;
+	vertical-align: middle;
+	display: table-cell;
+}
+.content{
+	width:20px;
+	height:20px;
+	background-color: red;
+	margin:0 auto;
+}
+</pre>
+<pre>
+/*第三种方法
+ * 优点：简单
+ * 缺点：IE(IE8 beta)中无效,无足够空间时，content 
+ * 被截断，但是不会有滚动条出现
+ */
+.wrapper{
+	width:100px;
+	height:100px;
+	background-color: yellow;
+	position:relative;
+}
+.content{
+	width:20px;
+	height:20px;
+	background-color: red;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+</pre>
+<pre>
+/*第四种方法
+ * 优点：适用于所有浏览器,没有足够空间时(例如：窗口缩小)
+ * content 不会被截断，滚动条出现
+ * 缺点：需要额外的空元素
+ */
+.wrapper{
+	width:100px;
+	height:100px;
+	background-color: yellow;
+	position:relative;
+}
+.div1{
+	height:50%;
+	margin-bottom:-10px;
+}
+.content{
+	width:20px;
+	height:20px;
+	background-color: red;
+	margin: auto;
+	position: relative;
+}
+</pre>
+		</div>
 </body>
 </html>
