@@ -25,9 +25,9 @@
 								CSS
 							</a>
 							<ul>
-								<li data-src="html/drag/drag.html"><a>红色区域随鼠标移动</a></li>
-								<li><a href="#">text2</a></li>
-								<li><a href="#">text3</a></li>
+								<!-- <li data-src="html/drag/drag.html"><a>红色区域随鼠标移动</a></li>
+								<li data-src="html/css/browser.html"><a>浏览器兼容问题</a></li> -->
+								<li data-src="html/css/ellipsis.html"><a>css超出宽度换行问题</a></li>
 							</ul>
 						</li>
 						<li class="">
@@ -36,8 +36,8 @@
 								JavaScript
 							</a>
 							<ul>
-								<li data-src="html/imgView.html"><a>图片上传预览</a></li>
-								<li><a href="#">text2</a></li>
+								<li data-src="html/javascript/imgView.html"><a>图片上传预览</a></li>
+								<li data-src="html/javascript/isEmpty.html"><a>对象是否为空和判断数据类型</a></li>
 								<li><a href="#">text3</a></li>
 							</ul>
 						</li>
@@ -101,7 +101,7 @@
 			<iframe 
 				id="menuFrame" 
 				name="menuFrame" 
-				src="html/drag/drag.html" 
+				src="html/css/ellipsis.html" 
 				style="overflow:visible;" 
 				scrolling="yes" 
 				frameborder="no" 
@@ -120,10 +120,17 @@
 	<script type="text/javascript" src="js//layui.js"></script>
 	<script type="text/javascript" src="js/jquery-rvnm.js"></script>
 	<script type="text/javascript">
-		layui.use('element', function(){
-			var element = layui.element;
-		});
+		// layui.use('element', function(){
+		// 	var element = layui.element;
+		// });
 		$(function () {
+			let a = localStorage.getItem("ba")
+			if(a){
+				console.log(a)
+				$("#menuFrame").attr("style","background: url(./image/"+a+".jpg) no-repeat;")
+			}else{
+				localStorage.setItem("ba",1)
+			}
 			var rvnMenu = $("#navbar").rvnm({
 				theme: 'dark-lesb'
 			});

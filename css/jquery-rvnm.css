@@ -6,6 +6,7 @@ body,html{
 .layui-body{
     overflow: hidden;
 }
+
 /* ripple */
 .rvnm-ripple {
   width: 0;
@@ -31,7 +32,7 @@ body,html{
     position: absolute;
     left: 0px;
     top:0;
-    width: 220px;
+    width: 200px;
     background: #A0AEC4 ;
     min-height: 50vh;
     overflow-y: hidden;
@@ -39,7 +40,7 @@ body,html{
 }
 
 .rvnm-wrapper{
-    margin-left: 220px;
+    margin-left: 200px;
 }
 
 
@@ -106,11 +107,11 @@ body,html{
     color: #333 ;
     position: relative;
     overflow: hidden;
-    height: 45px;
+    /* height: 45px; */
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing:border-box;
-    line-height: 1.75em;
+    /* line-height: 1.75em; */
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -134,13 +135,13 @@ body,html{
 }
 
 .rvnm-navbar-box ul li.rvnm-expandable{
-    background-image: url(img/rb.png) ;
+    background-image: url(./../img/rb.png) ;
     background-repeat: no-repeat;
     background-position: 95% 10px;
 }
 
 .rvnm-navbar-box ul li.rvnm-collapseable{
-    background-image: url(img/db.png) ;
+    background-image: url(./../img/db.png) ;
     background-repeat: no-repeat;
     background-position: 95% 10px;
 }
@@ -234,7 +235,7 @@ body,html{
     -moz-transition:.6s;
     -webkit-transition:.6s;
     transition:.6s;
-    background: #fff url(img/mb.png) center no-repeat ;
+    background: #fff url(./../img/mb.png) center no-repeat ;
     z-index: 9999;
 }
 
@@ -252,7 +253,7 @@ body,html{
 
 .rvnm-navbar-box.rvnm-mobile.rvnm-mobile-expand{
     overflow: visible;
-    background: #fff url(img/cb.png) no-repeat ;
+    background: #fff url(./../img/cb.png) no-repeat ;
     background-position: 5px 5px;
     opacity: 1 ;
     padding-top: 40px;
@@ -297,13 +298,13 @@ body,html{
 
 
 .rvnm-navbar-box.dark ul li.rvnm-expandable{
-    background-image: url(img/rw.png) ;
+    background-image: url(./../img/rw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
 
 .rvnm-navbar-box.dark ul li.rvnm-collapseable{
-    background-image: url(img/dw.png) ;
+    background-image: url(./../img/dw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
@@ -338,11 +339,11 @@ body,html{
 /*Dark theme mobile mode*/
 
 .rvnm-navbar-box.rvnm-mobile.dark{
-    background: #393a48 url(img/mw.png) center no-repeat ;
+    background: #393a48 url(./../img/mw.png) center no-repeat ;
 }
 
 .rvnm-navbar-box.rvnm-mobile.dark.rvnm-mobile-expand{
-    background: #393a48 url(img/cw.png) no-repeat ;
+    background: #393a48 url(./../img/cw.png) no-repeat ;
     background-position: 5px 5px;
 }
 
@@ -390,13 +391,13 @@ body,html{
 
 
 .rvnm-navbar-box.dark-ruby ul li.rvnm-expandable{
-    background-image: url(img/rw.png) ;
+    background-image: url(./../img/rw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
 
 .rvnm-navbar-box.dark-ruby ul li.rvnm-collapseable{
-    background-image: url(img/dw.png) ;
+    background-image: url(./../img/dw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
@@ -427,11 +428,11 @@ body,html{
 /*Dark ruby theme mobile mode*/
 
 .rvnm-navbar-box.rvnm-mobile.dark-ruby{
-    background: #393a48 url(img/mw.png) center no-repeat ;
+    background: #393a48 url(./../img/mw.png) center no-repeat ;
 }
 
 .rvnm-navbar-box.rvnm-mobile.dark-ruby.rvnm-mobile-expand{
-    background: #393a48 url(img/cw.png) no-repeat ;
+    background: #393a48 url(./../img/cw.png) no-repeat ;
     background-position: 5px 5px;
 }
 
@@ -478,13 +479,13 @@ body,html{
 
 
 .rvnm-navbar-box.dark-beryl ul li.rvnm-expandable{
-    background-image: url(img/rw.png) ;
+    background-image: url(./../img/rw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
 
 .rvnm-navbar-box.dark-beryl ul li.rvnm-collapseable{
-    background-image: url(img/dw.png) ;
+    background-image: url(./../img/dw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
@@ -515,11 +516,11 @@ body,html{
 /*Dark beryl theme mobile mode*/
 
 .rvnm-navbar-box.rvnm-mobile.dark-beryl{
-    background: #393a48 url(img/mw.png) center no-repeat ;
+    background: #393a48 url(./../img/mw.png) center no-repeat ;
 }
 
 .rvnm-navbar-box.rvnm-mobile.dark-beryl.rvnm-mobile-expand{
-    background: #393a48 url(img/cw.png) no-repeat ;
+    background: #393a48 url(./../img/cw.png) no-repeat ;
     background-position: 5px 5px;
 }
 
@@ -567,13 +568,13 @@ body,html{
 
 
 .rvnm-navbar-box.dark-doder ul li.rvnm-expandable{
-    background-image: url(img/rw.png) ;
+    background-image: url(./../img/rw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
 
 .rvnm-navbar-box.dark-doder ul li.rvnm-collapseable{
-    background-image: url(img/dw.png) ;
+    background-image: url(./../img/dw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
@@ -604,11 +605,11 @@ body,html{
 /*Dark doder theme mobile mode*/
 
 .rvnm-navbar-box.rvnm-mobile.dark-doder{
-    background: #393a48 url(img/mw.png) center no-repeat ;
+    background: #393a48 url(./../img/mw.png) center no-repeat ;
 }
 
 .rvnm-navbar-box.rvnm-mobile.dark-doder.rvnm-mobile-expand{
-    background: #393a48 url(img/cw.png) no-repeat ;
+    background: #393a48 url(./../img/cw.png) no-repeat ;
     background-position: 5px 5px;
 }
 
@@ -657,13 +658,13 @@ body,html{
 
 
 .rvnm-navbar-box.dark-lesb ul li.rvnm-expandable{
-    background-image: url(img/rw.png) ;
+    background-image: url(./../img/rw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
 
 .rvnm-navbar-box.dark-lesb ul li.rvnm-collapseable{
-    background-image: url(img/dw.png) ;
+    background-image: url(./../img/dw.png) ;
     background-repeat: no-repeat;
     background-position: 95% 15px;
 }
@@ -694,11 +695,11 @@ body,html{
 /*Dark lesb theme mobile mode*/
 
 .rvnm-navbar-box.rvnm-mobile.dark-lesb{
-    background: #393a48 url(img/mw.png) center no-repeat ;
+    background: #393a48 url(./../img/mw.png) center no-repeat ;
 }
 
 .rvnm-navbar-box.rvnm-mobile.dark-lesb.rvnm-mobile-expand{
-    background: #393a48 url(img/cw.png) no-repeat ;
+    background: #393a48 url(./../img/cw.png) no-repeat ;
     background-position: 5px 5px;
 }
 

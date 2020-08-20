@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>H5页面模板</title>
+	<!--声明页面编码格式-->
+    <meta charset="utf-8">
+    <!--搜索引擎优化相关设置（关键字）-->
+    <meta name="keywords" content="SEO关键词："/>
+    <!--搜索引擎优化相关设置（描述）-->
+    <meta name="description" content="SEO描述："/>
+    <!--强制IE以最高级模式渲染文档-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!--移动浏览器自适应设定-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!--引入页面基础的CSS-->
+    
+    <!--引入页面依赖的js库-->
+    
+</head>
+<body>
+    <p>判断数据类型</p>
+    <xmp>
+        /**
+        * d 数据
+        * t o == Object、a == Array、N == Number、s == String、u == undefined、n == null、b==Boolean
+        */
+        const dataType = (d, t) => {  
+            if(t){
+                let i = Object.prototype.toString.call(d)
+                let f = true;
+                if(t == "o")i == "[object Object]" ? f=true : f=false;
+                if(t == "s")i == "[object String]" ? f=true : f=false;
+                if(t == "N")i == "[object Number]" ? f=true : f=false;
+                if(t == "n")i == "[object null]" ? f=true : f=false;
+                if(t == "u")i == "[object undefined]" ? f=true : f=false;
+                if(t == "b")i == "[object Boolean]" ? f=true : f=false;
+                return f;
+            }else{
+                return  Object.prototype.toString.call(d)
+            }
+          }
+    </xmp>
+    <p>判断对象是否为空</p>
+    <xmp>
+        const isEmpty = (o) => {  
+            return  !Object.getOwnPropertyNames(o).length &&  !Object.getOwnPropertySymbols(o).length && JSON.stringify(o) != {}
+        }
+    </xmp>
+</body>
+</html>
